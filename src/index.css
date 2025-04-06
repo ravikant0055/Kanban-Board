@@ -2,6 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
+::-webkit-scrollbar {
+  width : 4px;
+}
+
+::-webkit-scrollbar:horizontal{
+  height: 8px;
+}
+
+
 @layer base {
   :root {
     --background: 0 0% 100%;

@@ -1,12 +1,60 @@
-# React + Vite
+# 📝 Kanban Board
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple and intuitive **Kanban Board** built with **React.js**, **Tailwind CSS**, and **dnd-kit**. Manage your tasks with ease by dragging and dropping them between columns, adding new tasks, editing existing ones, or deleting them—all in a beautifully styled interface.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Live Demo
 
-## Expanding the ESLint configuration
+👉 [Click here to try the live demo](https://your-live-demo-link.com)
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 📸 Preview
+
+![Kanban Board Screenshot](src/assets/Kanbanboard.png)
+
+---
+
+## 🛠️ Technologies Used
+
+- ⚛️ **React.js** – UI library
+- 🧠 **JavaScript** – Core logic
+- 🎨 **Tailwind CSS** – Utility-first CSS framework
+- 📦 **dnd-kit** – Drag-and-drop support
+- 🔍 **React Icons** – Pre-built icons
+- 💡 **shadcn/ui** – Styled component library
+
+---
+
+## 📋 Features
+
+- ✅ **3 Dynamic Columns**: _To do_, _In Progress_, _Completed_
+- ➕ **Add Task**: Click "Add Task" to open a modal and input task name & description
+- ✏️ **Edit Task**: Click on a task to edit its title or description. Click outside or press `Enter` to save.
+- 🗑️ **Delete Task**: Hover on any task to reveal the delete button
+- 🔃 **Drag and Drop**: Seamlessly move tasks between columns
+- 💾 **LocalStorage Persistence**: Your tasks remain saved even after refreshing the page
+
+---
+
+## 🧩 How It Works
+
+1. Click on the **Add Task** button
+2. Enter a task **name** and **description**
+3. Hit **Enter** or click outside to save the task
+4. Task appears in the **To Do** column
+5. Drag and drop between **To Do**, **In Progress**, and **Completed**
+6. Hover over a task to delete it, or click to edit
+
+---
+
+## 📂 Local Development
+
+### 🔧 Getting Started
+
+```bash
+git clone https://github.com/your-username/kanban-board.git
+cd kanban-board
+npm install
+npm start
