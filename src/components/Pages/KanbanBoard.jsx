@@ -78,6 +78,19 @@ const KanbanBoard = () => {
       return;
     }
   }
+  
+  const onDragEnd = (e) => {
+    setActiveTask(null);
+
+    const { active, over } = e;
+    if (!over) return;
+
+    const activeId = active.id;
+    const overId = over.id;
+
+    if (activeId === overId) return;
+
+  }
 
   const onDragOver = (e) => {
     const { active, over } = e;
@@ -151,7 +164,7 @@ const KanbanBoard = () => {
             </DialogFooter>
           </DialogContent>
         </Dialog>
-        <DndContext sensors={sensors} onDragStart={onDragStart} onDragOver={onDragOver}>
+        <DndContext sensors={sensors} onDragStart={onDragStart} onDragOver={onDragOver} onDragEnd={onDragEnd}>
 
           <div className='flex divide-x divide-gray-300'>
             <SortableContext items={ColumnIds}>
