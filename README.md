@@ -6,7 +6,7 @@ A simple and intuitive **Kanban Board** built with **React.js**, **Tailwind CSS*
 
 ## 🚀 Live Demo
 
-👉 [Click here to try the live demo](https://your-live-demo-link.com)
+👉 [Click here to try the live demo](https://kanban-board-one-mauve.vercel.app)
 
 ---
 
