@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useMemo, useState } from 'react'
 import { Button } from '../ui/button';
 import { IoMdAdd } from "react-icons/io";
 import { Dialog, DialogContent, DialogFooter, DialogHeader, DialogTitle, DialogTrigger } from '../ui/dialog';
@@ -6,7 +6,7 @@ import { Input } from '../ui/input';
 import { Label } from '../ui/label';
 import { createPortal } from 'react-dom';
 import { DndContext, DragOverlay, PointerSensor, useSensor, useSensors } from '@dnd-kit/core';
-import { arrayMove } from '@dnd-kit/sortable';
+import { arrayMove, SortableContext } from '@dnd-kit/sortable';
 import { Textarea } from '../ui/textarea';
 import ColumnContainer from './ColumnContainer';
 import TaskCard from './TaskCard';
@@ -20,6 +20,7 @@ const KanbanBoard = () => {
   const [open, setOpen] = useState(false);
   const [activeTask, setActiveTask] = useState(null);
 
+
   useEffect(() => {
     localStorage.setItem("kanbanTasks", JSON.stringify(tasks));
   }, [tasks]);
@@ -29,6 +30,10 @@ const KanbanBoard = () => {
     { id: 2, title: "In Progress", bgcolor: "#e0cef2" },
     { id: 3, title: "Completed", bgcolor: "#cef2ce" },
   ]
+
+  const ColumnIds = useMemo(() => {
+      return columns.map((col) => col.id);
+    }, [columns]);
 
   const sensors = useSensors(useSensor(PointerSensor, {
     activationConstraint: {
@@ -110,6 +115,8 @@ const KanbanBoard = () => {
     }
   }
 
+  
+
   return (
     <div className='flex flex-col gap-10 items-center min-h-screen w-full items-start px-20 py-10 bg-[#f7f7f7]'>
       <div className="flex flex-col items-start gap-10">
@@ -147,11 +154,13 @@ const KanbanBoard = () => {
         <DndContext sensors={sensors} onDragStart={onDragStart} onDragOver={onDragOver}>
 
           <div className='flex divide-x divide-gray-300'>
-            {columns.map((col) => (
-              <ColumnContainer key={col.id} column={col} deleteTask={deleteTask} updateTask={updateTask}
-                tasks={tasks.filter((task) => task.columnId === col.id)}
-              />
-            ))}
+            <SortableContext items={ColumnIds}>
+              {columns.map((col) => (
+                <ColumnContainer key={col.id} column={col} deleteTask={deleteTask} updateTask={updateTask}
+                  tasks={tasks.filter((task) => task.columnId === col.id)}
+                />
+              ))}
+            </SortableContext>
           </div>
 
           {createPortal(
