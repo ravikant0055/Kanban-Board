@@ -12,7 +12,7 @@ A simple and intuitive **Kanban Board** built with **React.js**, **Tailwind CSS*
 
 ## 📸 Preview
 
-![Kanban Board Screenshot](src/assets/Kanbanboard.png)
+![Kanban Board Screenshot](./src/assets/Kanbanboard.png)
 
 ---
 
