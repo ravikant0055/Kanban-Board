@@ -131,7 +131,7 @@ const KanbanBoard = () => {
   
 
   return (
-    <div className='flex flex-col gap-10 items-center min-h-screen w-full items-start px-20 py-10 bg-[#f7f7f7]'>
+    <div className='flex flex-col gap-10 items-center min-h-screen w-full px-20 py-10 bg-[#f7f7f7]'>
       <div className="flex flex-col items-start gap-10">
         <Dialog open={open} onOpenChange={setOpen}>
           <DialogTrigger asChild>

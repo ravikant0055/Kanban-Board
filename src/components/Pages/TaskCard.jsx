@@ -28,7 +28,7 @@ const TaskCard = ({ task, deleteTask, updateTask }) => {
     return (
       <div ref={setNodeRef} style={style} {...listeners} {...attributes} className="flex flex-col items-center bg-white p-3 h-[100px] min-h-[100px] rounded-xl hover:ring-2 hover:ring-inset hover:ring-cyan-500 cursor-grab">
         <textarea
-          className='h-[80%] font-[500] text-black w-full resize-none border-none rounded bg-transparent text-white focus:outline-none'
+          className='h-[80%] font-[500] text-black w-full resize-none border-none rounded bg-transparent focus:outline-none'
           value={task.title}
           placeholder="Title"
           onBlur={toggleEditMode}
@@ -47,7 +47,7 @@ const TaskCard = ({ task, deleteTask, updateTask }) => {
         />
 
         <textarea
-          className='h-[80%] text-black w-full resize-none border-none rounded bg-transparent text-white focus:outline-none'
+          className='h-[80%] text-black/50 w-full resize-none border-none rounded bg-transparent focus:outline-none'
           value={task.description}
           placeholder="Description"
           onBlur={toggleEditMode}
