@@ -56,7 +56,7 @@ A simple and intuitive **Kanban Board** built with **React.js**, **Tailwind CSS*
 ### 🔧 Getting Started
 
 ```bash
-git clone https://github.com/your-username/kanban-board.git
+git clone https://github.com/ravikant0055/kanban-board.git
 cd kanban-board
 npm install
 npm start
